@@ -25,7 +25,10 @@ ca2=Categoria("sucos")
 pr1=Produto("coca-cola",5,5,ca1)
 pr2=Produto("del-vale",10,9,ca2)
 
-pe1=Pedido("poa",pr1,p5)
+pe1=Pedido("poa",p5)
+
+pe1.addProduto(pr2)
+pe1.addProduto(pr1)
 
 print(pe1)
 
