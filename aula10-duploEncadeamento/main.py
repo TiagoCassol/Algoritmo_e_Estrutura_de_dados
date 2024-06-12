@@ -8,6 +8,7 @@ lista.adicionarOrdenado("cafu")
 lista.adicionarOrdenado("roberto")
 lista.adicionarOrdenado("dede")
 lista.adicionarOrdenado("lucio")
+lista.adicionarOrdenado("silvio")
 
 lista.imprimirInverso()
 lista.imprimir()

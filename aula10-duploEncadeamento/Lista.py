@@ -53,18 +53,26 @@ class Lista:
 
         def adicionarOrdenado(self, valor):
             nodo = No(valor)
+            #verefica se a lista esta vazia ou se o inicio é maior que valor do nodo
             if self.inicio is None or self.inicio.dado > valor:
                 nodo.proximo = self.inicio
                 self.inicio = nodo
+                #se tiver apenas um elemento na lista o final da lista recebera o Nodo(o elemento)
+                if self.inicio.proximo is None:
+                        self.fim = nodo
             else:
                 aux = self.inicio
+                #fica no while até achar seu lugar
                 while aux.proximo and aux.proximo.dado < valor:
                     aux = aux.proximo
+                #se chegar no final da lista
                 if aux.proximo is None:
+                        #insere nodo no final da lista
                         aux.proximo = nodo
                         nodo.anterior = aux
                         self.fim = nodo
                 else:
+                        #insere nodo no meio da lista
                         nodo.proximo = aux.proximo
                         nodo.anterior = aux
                         aux.proximo.anterior = nodo
