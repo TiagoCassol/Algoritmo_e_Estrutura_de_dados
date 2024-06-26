@@ -16,9 +16,9 @@ class Pilha:
         while( aux ):
            print( aux ) 
            aux = aux.proximo
+        print( "Total na pilha: " , self.tamanho )
         print("----------------------------")
         print("")
-        print( "Total na pilha: " , self.tamanho )
 
     def remover(self):
         if self.top == None:
