@@ -1,29 +1,41 @@
 from Apartamento import Apartamento
+from Estacionamento import *
 from Torre import Torre
+
 # 1) Construa a classe Torre e a classe Apartamento. A classe Torre deve possuir os atributos id, nome e endereço. A classe Apartamento deve conter os atributos, id, número 
 # do apartamento, número da vaga de garagem e torre.
 
-Torre = Torre("teste","rrr")
-Apartamento = Apartamento()
+torre1 = Torre(1, 'ttt', 'erondina')
+condominio = Condominio()
 
-Torre.imprimir()
-Apartamento.imprimir()
-# Apartamento.imprimir()
+for i in range(1, 6):
+    apt = Apartamento(i, f'Apartamento {i}', torre1)
+    condominio.cadastrar_apartamento(apt)
 
-# Apartamento.add("joão")
-# Apartamento.add("maria")
-# Apartamento.add("julia")
+while True:
+    print("\nMenu:")
+    print("1- Cadastrar apartamento")
+    print("2- Liberar vaga")
+    print("3- Imprimir a lista de apartamentos com vaga")
+    print("4- Imprimir a fila de espera")
+    print("5- Sair")
+    opcao = input("Escolha uma opção: ")
 
-# Apartamento.remover()
- 
-
-# 2) Este condomínio, não possui vagas de garagem para todos os apartamentos. Isso faz com que exista uma fila de espera por vagas. Implemente uma fila de espera que 
-# contenha os métodos para adicionar apartamentos na fila, retirar apartamentos informando o número da vaga que este apartamento receberá e um método para imprimir a fila de espera.
-
-
-
-
-
-# 3) O condomínio tem apenas 10 vagas de garagem. Então, no monento que o décimo primeiro apartamento for cadastrado, este apartamento deve ir para a fila de espera. 
-# Os apartamento que tem vaga de garagem, devem ficar na lista encadeada de apartamento com vaga, ordenados pelo número da vaga.
+    if opcao == '1':
+        id = int(input("ID do apartamento: "))
+        numero = input("Número do apartamento: ")
+        apt = Apartamento(id, numero, torre1)
+        condominio.cadastrar_apartamento(apt)
+    elif opcao == '2':
+        vaga = int(input("Número da vaga a ser liberada: "))
+        condominio.liberar_vaga(vaga)
+    elif opcao == '3':
+        condominio.imprimir_com_vaga()
+    elif opcao == '4':
+        condominio.fila_espera.imprimir_fila()
+    elif opcao == '5':
+        print("Fim.")
+        break
+    else:
+        print("Opção inválida. Tente novamente.")
 
