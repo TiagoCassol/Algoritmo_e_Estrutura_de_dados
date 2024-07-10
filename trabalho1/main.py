@@ -1,25 +1,44 @@
+# 1) Construa a classe Torre e a classe Apartamento. A classe Torre deve possuir os atributos id, nome e endereço. A classe Apartamento deve conter os atributos, id, número 
+# do apartamento, número da vaga de garagem e torre.
+#imports
 from Apartamento import Apartamento
 from Estacionamento import *
 from Torre import Torre
 
-# 1) Construa a classe Torre e a classe Apartamento. A classe Torre deve possuir os atributos id, nome e endereço. A classe Apartamento deve conter os atributos, id, número 
-# do apartamento, número da vaga de garagem e torre.
-
-torre1 = Torre(1, 'ttt', 'erondina')
+#Instancias
+torre1 = Torre(1, 'torresmo', 'torres')
+torre1.imprimir()
 condominio = Condominio()
 
-for i in range(1, 6):
-    apt = Apartamento(i, f'Apartamento {i}', torre1)
+
+#loops
+for i in range(1, 11):
+    apt = Apartamento(i, f'quarto {i}', torre1)
     condominio.cadastrar_apartamento(apt)
 
 while True:
-    print("\nMenu:")
+    print('')
+    print('')
+    print('')
+    print('')
+    print('')
+    print('')
+    print(Fore.GREEN + Style.BRIGHT + '==============================')
+    print(Fore.CYAN + Style.BRIGHT + '   __  __  _____  _   _  _   _ ')
+    print(Fore.CYAN + Style.BRIGHT + '  |  \/  ||  ___|| \ | || | | |')
+    print(Fore.CYAN + Style.BRIGHT + '  | \  / || |__  |  \| || | | |')
+    print(Fore.CYAN + Style.BRIGHT + '  | |\/| ||  __| | . ` || | | |')
+    print(Fore.CYAN + Style.BRIGHT + '  | |  | || |___ | |\  || |_| |')
+    print(Fore.CYAN + Style.BRIGHT + '  |_|  |_|\____/ \_| \_|\_____|')
+    print(Fore.GREEN + Style.BRIGHT + '==============================')
     print("1- Cadastrar apartamento")
     print("2- Liberar vaga")
     print("3- Imprimir a lista de apartamentos com vaga")
     print("4- Imprimir a fila de espera")
     print("5- Sair")
+    print(Fore.GREEN + Style.BRIGHT + '==============================')
     opcao = input("Escolha uma opção: ")
+
 
     if opcao == '1':
         id = int(input("ID do apartamento: "))
