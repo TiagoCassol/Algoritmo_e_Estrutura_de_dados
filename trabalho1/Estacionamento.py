@@ -1,14 +1,3 @@
-#pip install colorama
-from colorama import Fore, Style, init
-
-# Inicializa a biblioteca colorama
-init(autoreset=True)
-
-class No:
-        def __init__(self, valor):
-                self.dado = valor #armazena o valor do nodo
-                self.proximo = None  #aponta para o proximo nodo da lista 
-
 class FilaEspera:
     def __init__(self):
         self.fila = [] #fila de apartamentos da lista de espera

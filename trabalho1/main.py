@@ -16,6 +16,17 @@ for i in range(1, 11):
     apt = Apartamento(i, f'quarto {i}', torre1)
     condominio.cadastrar_apartamento(apt)
 
+# 4) Construa um menu que permita ao usuário escolher as opções de:
+
+# a) Cadastrar apartamento -> Quando o apartamento for cadastrado, se tiver vaga de garagem disponível, ele deve ir para a lista encadeada, ordenada pelo número da vaga. Se não 
+# tiver mais vagas, o apartamento deve ir para a fila de apartamentos que estão esperando a vaga.
+
+# b) Liberar vaga -> O Usuário deve informar o número da vaga que será liberada, então o apartamento que estiver nessa vaga deve ser colocado no fim da fila e o apartamento que 
+# estiver no início da fila deve ir para a lista encadeada, assumindo a vaga de garagem que foi liberada.
+
+# c) Imprimir a lista de apartamentos que tem vaga.
+
+# d) Imprimir a fila de apartamentos que estão esperando por vaga de garagem.
 while True:
     print('')
     print('')
